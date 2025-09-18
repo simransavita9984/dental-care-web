@@ -10,13 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function generateCaptcha() {
         return Math.floor(1000 + Math.random() * 9000).toString();
     }
-
-    // Set the initial captcha value
     captchaDisplay.textContent = generateCaptcha();
-
-    // Handle form submission
     contactForm.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevents the default form submission
+        e.preventDefault(); 
 
         let isValid = true;
         const enteredCaptcha = captchaInput.value;
@@ -35,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (enteredCaptcha !== correctCaptcha) {
             alert('Incorrect captcha. Please try again.');
-            captchaDisplay.textContent = generateCaptcha(); // Generate new captcha on failure
+            captchaDisplay.textContent = generateCaptcha(); 
             isValid = false;
         }
 
@@ -46,14 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isValid) {
             alert('Form submitted successfully!');
-            // Here you would typically send the form data to a server
-            // e.g., using `fetch()` or `axios`
             console.log('Form data:', {
                 name: nameInput.value,
                 mobile: mobileInput.value,
                 captcha: captchaInput.value,
             });
-            contactForm.reset(); // Reset the form after successful submission
+            contactForm.reset(); 
         }
     });
 });
