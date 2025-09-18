@@ -303,7 +303,7 @@ body {
 
 .reviews-container {
   display: flex;
-  gap: 24px; /* ✅ Gap between cards */
+  gap: 24px; 
   justify-content: center;
   flex-wrap: wrap;
 }
